@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Pizza Order Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      background: #fff;
+      color: #000;
+      margin: 20px;
+    }
+
+    .page-title {
+      text-align: center;
+      font-weight: bold;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .form-outer {
+      border: 1px solid #999;
+      padding: 10px 14px 14px 14px;
+      width: 480px;
+      background: #f0f0f0;
+    }
+
+    .form-outer-title {
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    fieldset {
+      border: 1px solid #999;
+      background: #fff;
+      margin-bottom: 8px;
+      padding: 6px 8px 10px 8px;
+    }
+
+    legend {
+      font-size: 12px;
+      padding: 0 4px;
+      color: #000;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="number"] {
+      font-size: 12px;
+      padding: 2px 4px;
+      border: 1px solid #aaa;
+      height: 22px;
+      color: #777;
+      background: #fff;
+    }
+
+    input::placeholder { color: #aaa; font-size: 11px; }
+
+    select {
+      font-size: 12px;
+      padding: 1px 2px;
+      border: 1px solid #aaa;
+      height: 22px;
+      background: #fff;
+    }
+
+    textarea {
+      font-size: 11px;
+      padding: 2px 4px;
+      border: 1px solid #aaa;
+      background: #fff;
+      color: #aaa;
+      resize: none;
+      font-family: Arial, sans-serif;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+      gap: 4px;
+    }
+
+    .lbl { font-size: 12px; white-space: nowrap; }
+
+    .spice-item, .radio-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      font-size: 12px;
+      margin-right: 6px;
+    }
+
+    .spice-item input, .radio-item input { margin: 0; }
+
+    .btn-row { display: flex; gap: 6px; margin-top: 8px; }
+
+    button {
+      font-size: 12px;
+      padding: 3px 12px;
+      border: 1px solid #888;
+      background: #e0e0e0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-title">
+  WT822: Advanced Website programming &nbsp; .net<br>
+  LAB 3<br>
+  HTML FORM
+</div>
+
+<div class="form-outer">
+  <div class="form-outer-title">PIZZA ORDER FORM</div>
+
+  <form action="#" method="post">
+
+    <!-- Delivery Address -->
+    <fieldset>
+      <legend>Delivery Address</legend>
+
+      <div class="row">
+        <span class="lbl" style="width:72px;">Full Name:</span>
+        <input type="text" name="fullname" placeholder="Full Name" style="width:128px;"/>
+        <span class="lbl" style="margin-left:10px;">Stree Address:</span>
+        <input type="text" name="street" placeholder="Address" style="flex:1;"/>
+      </div>
+
+      <div class="row">
+        <span class="lbl" style="width:72px;">Phone:</span>
+        <input type="tel" name="phone" placeholder="Phone" style="width:128px;"/>
+        <span class="lbl" style="margin-left:10px;">Email:</span>
+        <input type="email" name="email" placeholder="Email" style="flex:1;"/>
+      </div>
+
+      <div class="row">
+        <span class="lbl" style="width:72px;">Password</span>
+        <input type="password" name="password" placeholder="Password" style="width:128px;"/>
+      </div>
+    </fieldset>
+
+    <!-- Payment Information -->
+    <fieldset>
+      <legend>Payment Information</legend>
+
+      <div class="row">
+        <span class="lbl" style="width:78px;">Card Type:</span>
+        <select name="card_type" style="width:100px;">
+          <option value="visa">Visa</option>
+          <option value="mastercard">Mastercard</option>
+          <option value="discover">Discover</option>
+        </select>
+        <span class="lbl" style="margin-left:8px;">Card Number:</span>
+        <input type="text" name="card_number" placeholder="Card Number" style="flex:1;"/>
+      </div>
+
+      <div class="row">
+        <span class="lbl" style="width:78px;">Name on Card:</span>
+        <input type="text" name="name_on_card" placeholder="Name" style="width:128px;"/>
+      </div>
+    </fieldset>
+
+    <!-- Customize Your Pizza -->
+    <fieldset>
+      <legend>Customize Your Pizza</legend>
+
+      <div class="row">
+        <span class="lbl" style="width:90px;">Pizza size :</span>
+        <select name="pizza_size" style="width:100px;">
+          <option value="large" selected>large</option>
+          <option value="medium">medium</option>
+          <option value="small">small</option>
+        </select>
+        <span class="lbl" style="margin-left:12px;">Quantity:</span>
+        <input type="number" name="quantity" min="1" style="flex:1;"/>
+      </div>
+
+      <div class="row">
+        <span class="lbl" style="width:90px;">Spices :</span>
+        <label class="spice-item"><input type="checkbox" name="spices" value="black_pepper"/> Black pepper</label>
+        <label class="spice-item"><input type="checkbox" name="spices" value="bell_peppers"/> Bell peppers</label>
+        <label class="spice-item"><input type="checkbox" name="spices" value="mayonnaise"/> mayonnaise</label>
+      </div>
+
+      <div class="row" style="align-items:flex-start;">
+        <span class="lbl" style="width:90px; padding-top:3px;">Other Requirements:</span>
+        <div>
+          <textarea name="requirements" rows="3" cols="27" placeholder="Any Other&#10;Requirements"></textarea>
+          <div style="display:flex; align-items:center; gap:5px; margin-top:3px; font-size:12px;">
+            <span>Meat</span>
+            <label class="radio-item"><input type="radio" name="meat" value="fish"/> Fish</label>
+            <label class="radio-item"><input type="radio" name="meat" value="cow"/> Cow</label>
+            <label class="radio-item"><input type="radio" name="meat" value="chicken"/> Chicken</label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="btn-row">
+      <button type="reset">Clear Order</button>
+      <button type="submit">Place Order</button>
+    </div>
+
+  </form>
+</div>
+
+</body>
+</html>
