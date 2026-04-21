@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Employee Registration Form </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      background: #fff;
+      color: #000;
+      margin: 20px;
+    }
+
+    .form-label {
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .form-outer {
+      background: #c0c0c0;
+      padding: 14px 20px 20px 20px;
+      width: 620px;
+      border: 1px solid #999;
+    }
+
+    .form-title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      font-style: italic;
+      font-family: Arial, sans-serif;
+      margin-bottom: 16px;
+      color: #000;
+    }
+
+    .form-body {
+      display: flex;
+      gap: 20px;
+    }
+
+    .col-left, .col-right {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .col-left { flex: 1; }
+    .col-right { flex: 1; }
+
+    .field-row {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      min-height: 24px;
+    }
+
+    .field-row label {
+      font-weight: bold;
+      font-size: 12px;
+      text-align: right;
+      white-space: nowrap;
+      width: 130px;
+      flex-shrink: 0;
+    }
+
+    .col-right .field-row label {
+      width: 125px;
+      text-align: right;
+    }
+
+    input[type="text"] {
+      font-size: 12px;
+      padding: 1px 3px;
+      border: 1px solid #666;
+      height: 20px;
+      background: #fff;
+      color: #000;
+    }
+
+    /* widths per field */
+    .w-short  { width: 45px; }
+    .w-medium { width: 140px; }
+    .w-long   { width: 200px; }
+    .w-date   { width: 80px; }
+    .w-ssn    { width: 90px; }
+    .w-salary { width: 80px; }
+    .w-zip    { width: 60px; }
+    .w-phone  { width: 100px; }
+    .w-state  { width: 35px; }
+    .w-city   { width: 120px; }
+
+    /* Radio & Checkbox */
+    .radio-item, .check-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+    }
+
+    .radio-item input, .check-item input {
+      margin: 0;
+    }
+
+    /* Status radios stacked */
+    .status-block {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      margin-left: 4px;
+    }
+
+    /* Sex radios stacked */
+    .sex-block {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      margin-left: 4px;
+    }
+
+    /* align sex row with label */
+    .sex-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 4px;
+    }
+
+    .sex-row label {
+      font-weight: bold;
+      font-size: 12px;
+      text-align: right;
+      width: 130px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+
+    .status-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 4px;
+    }
+
+    .status-row label.field-lbl {
+      font-weight: bold;
+      font-size: 12px;
+      text-align: right;
+      width: 125px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-label">FORM 2: EMPLOYEE REGISTRATION</div>
+
+<div class="form-outer">
+  <div class="form-title">Employee Data</div>
+
+  <form action="#" method="post">
+    <div class="form-body">
+
+      <!-- LEFT COLUMN -->
+      <div class="col-left">
+
+        <div class="field-row">
+          <label>Employee ID:</label>
+          <input type="text" class="w-short" name="emp_id" value="102"/>
+        </div>
+
+        <div class="field-row">
+          <label>Manager ID:</label>
+          <input type="text" class="w-short" name="mgr_id" value="501"/>
+        </div>
+
+        <div class="field-row">
+          <label>Emp. First Name:</label>
+          <input type="text" class="w-medium" name="first_name" value="Fran"/>
+        </div>
+
+        <div class="field-row">
+          <label>Emp. Last Name:</label>
+          <input type="text" class="w-medium" name="last_name" value="Whitney"/>
+        </div>
+
+        <div class="field-row">
+          <label>Department ID:</label>
+          <input type="text" class="w-short" name="dept_id" value="100"/>
+        </div>
+
+        <div class="field-row">
+          <label>Street:</label>
+          <input type="text" class="w-long" name="street" value="49 East Washington Street"/>
+        </div>
+
+        <div class="field-row">
+          <label>City:</label>
+          <input type="text" class="w-city" name="city" value="Needham"/>
+        </div>
+
+        <div class="field-row">
+          <label>State:</label>
+          <input type="text" class="w-state" name="state" value="MA"/>
+        </div>
+
+        <div class="field-row">
+          <label>Zip Code:</label>
+          <input type="text" class="w-zip" name="zip" value="02192-"/>
+        </div>
+
+        <div class="field-row">
+          <label>Phone:</label>
+          <input type="text" class="w-phone" name="phone" value="(617) 555-3985"/>
+        </div>
+
+        <!-- Sex -->
+        <div class="sex-row" style="margin-top:2px;">
+          <label>Sex:</label>
+          <div class="sex-block">
+            <label class="radio-item">
+              <input type="radio" name="sex" value="male"/> Male
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="sex" value="female" checked/> Female
+            </label>
+          </div>
+        </div>
+
+      </div><!-- end col-left -->
+
+      <!-- RIGHT COLUMN -->
+      <div class="col-right">
+
+        <div class="field-row">
+          <label>Birth Date:</label>
+          <input type="text" class="w-date" name="birth_date" value="06/05/1962"/>
+        </div>
+
+        <div class="field-row">
+          <label>Soc. Sec. No.:</label>
+          <input type="text" class="w-ssn" name="ssn" value="017-34-9033"/>
+        </div>
+
+        <div class="field-row">
+          <label>Salary:</label>
+          <input type="text" class="w-salary" name="salary" value="$45,700.00"/>
+        </div>
+
+        <div class="field-row">
+          <label>Start Date:</label>
+          <input type="text" class="w-date" name="start_date" value="02/26/1990"/>
+        </div>
+
+        <div class="field-row">
+          <label>Termination Date:</label>
+          <input type="text" class="w-date" name="term_date" value="00/00/0000"/>
+        </div>
+
+        <!-- Status -->
+        <div class="status-row" style="margin-top:2px;">
+          <label class="field-lbl">Status:</label>
+          <div class="status-block">
+            <label class="radio-item">
+              <input type="radio" name="status" value="active" checked/> Active
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="status" value="terminated"/> Terminated
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="status" value="on_leave"/> On Leave
+            </label>
+          </div>
+        </div>
+
+        <div class="field-row" style="margin-top:6px;">
+          <label>Health Insurance:</label>
+          <label class="check-item">
+            <input type="checkbox" name="health_insurance" checked/>
+          </label>
+        </div>
+
+        <div class="field-row">
+          <label>Life Insurance:</label>
+          <label class="check-item">
+            <input type="checkbox" name="life_insurance" checked/>
+          </label>
+        </div>
+
+        <div class="field-row">
+          <label>Day Care:</label>
+          <label class="check-item">
+            <input type="checkbox" name="day_care"/>
+          </label>
+        </div>
+
+      </div><!-- end col-right -->
+
+    </div><!-- end form-body -->
+  </form>
+</div>
+
+</body>
+</html>
